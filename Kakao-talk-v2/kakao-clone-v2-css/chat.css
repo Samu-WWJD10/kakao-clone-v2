@@ -1,0 +1,225 @@
+.header-wrapper {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url(../images/ep_naturalwhite/chatBG2.png.png);
+  padding: 5px 20px;
+  border-bottom: 1px solid #88886b7c;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.3),
+    0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.chats-body {
+  background-image: url(../images/ep_naturalwhite/chatBG2.png.png);
+  min-height: 1000vh;
+}
+
+.chat {
+  padding-top: 105px;
+}
+
+.chat__write-container {
+  position: fixed;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 8px 27px -25px rgba(92, 94, 61, 0.39),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  50% {
+    box-shadow: 0 8px 27px 0px rgba(92, 94, 61, 0.39),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  100% {
+    box-shadow: 0 8px 27px -25px rgba(92, 94, 61, 0.39),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+}
+
+.chat__write {
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0;
+  padding: 13px 50px;
+  width: 100%;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: width 0.5s ease-in-out, border-radius 0.5s ease-in,
+    transform 0.5s ease-in;
+}
+
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+  transform: translateY(-35px);
+  border-radius: 40px;
+  box-shadow: 0 8px 27px -5px rgba(92, 94, 61, 0.39),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  animation: float 2.5s ease-in-out infinite forwards;
+}
+
+.chat__icon {
+  font-size: 16px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
+}
+
+.chat__icon-left {
+  position: absolute;
+  left: 15px;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 15px;
+}
+
+.chat__icon-right i {
+  padding-left: 8px;
+}
+
+.chat__write i {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.chat__write-column:nth-child(2) {
+  width: 80%;
+}
+
+.chat__write-column input {
+  padding: 7px 7px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chat .chat__messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0px 20px; */
+  padding-top: 30px;
+}
+
+.chat__messages .chat__timestamp {
+  background-color: white;
+  font-size: 9px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 27px -5px rgba(92, 94, 61, 0.39),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.message .message__bubble {
+  background-color: white;
+  box-shadow: 0 8px 27px -5px rgba(92, 94, 61, 0.39),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  padding: 7px 10px;
+  border-radius: 30px;
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+}
+
+.incoming-message {
+  align-self: flex-start;
+}
+
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+.incoming-message img {
+  width: 30px;
+  border-radius: 15px;
+  margin-right: 13px;
+  animation: spin 1.8s linear infinite;
+  box-shadow: 0 8px 27px -5px rgba(92, 94, 61, 0.39),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.incoming-message .message__autor {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.incoming-message .message__bubble {
+  border-bottom-left-radius: 0px;
+  background-image: linear-gradient(to left, #757f9a, #c2c9d7);
+}
+
+.sent-message {
+  align-self: flex-end;
+}
+
+.sent-message .message__bubble {
+  border-bottom-right-radius: 0px;
+  background-image: linear-gradient(to left, #bbd2c5, #869d9d);
+}
+
+@keyframes incomingAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.incoming-message {
+  animation: incomingAnimation 0.5s linear forwards;
+}
+
+@keyframes sentAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sent-message {
+  animation: sentAnimation 0.5s linear forwards;
+}
